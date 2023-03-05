@@ -1,0 +1,81 @@
+{% extends 'application/base.html' %}
+{% load static %}
+{% block base_title %}Marcus{% endblock %}
+
+{% block base_page_css_links %}
+    <link rel="stylesheet" href="{% static 'application/libs/owl.carousel/assets/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'application/libs/owl.carousel/assets/owl.theme.default.min.css' %}">
+{% endblock %}
+
+
+
+{% block base_content %}
+    <p class="card-title">Overall Tasks Report</p>
+    <div class="row">
+        <div class="col-xl-12">
+
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="card">
+
+                        <div class="card-body">
+                            <div class="text-muted text-center">
+                                <h2 class="mb-4"><i
+                                        class="fa fa-calendar-alt p-3 bg-soft-primary rounded-circle text-primary"></i>
+                                </h2>
+                                <h5 class="font-size-14 mb-1">Total Tasks</h5>
+                                <h4>203</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="text-muted text-center">
+                                <h2 class="mb-4"><i
+                                        class="fa fa-calendar-check p-3 bg-soft-success rounded-circle text-success"></i>
+                                </h2>
+                                <h5 class="font-size-14 mb-1">Completed Tasks</h5>
+                                <h4>195</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="text-muted text-center">
+                                <h2 class="mb-4"><i
+                                        class="fa fa-calendar-times p-3 bg-soft-danger rounded-circle text-danger"></i>
+                                </h2>
+                                <h5 class="font-size-14 mb-1">Failed Tasks</h5>
+                                <h4>2</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="text-muted text-center">
+                                <h2 class="mb-4"><i
+                                        class="fa fa-star p-3 bg-soft-warning rounded-circle text-warning"></i></h2>
+                                <h5 class="font-size-14 mb-1">Rating</h5>
+                                <h4>9.8 - 10</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <!-- end row -->
+        </div>
+    </div>
+    <br>
+
+{% endblock %}

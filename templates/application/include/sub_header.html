@@ -1,0 +1,115 @@
+<div class="topnav">
+    <div class="container-fluid">
+        <nav class="navbar navbar-light navbar-expand-lg topnav-menu">
+
+            <div class="collapse navbar-collapse" id="topnav-menu-content">
+                <ul class="navbar-nav">
+
+                    {# DASHBOARD #}
+                    <li class="nav-item">
+                        <a class="nav-link arrow-none" href="{% url 'application:dashboard' %}">
+                            <i class="bx bx-home-circle mr-2"></i>Dashboard
+                        </a>
+                    </li>
+                    {# --------------------------------------------------------------------------------------------- #}
+
+                    {# FEATURES #}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-pages" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="bx bx-user mr-2"></i>Manage
+                            <div class="arrow-down"></div>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="topnav-pages">
+
+                            {# EMPLOYEES #}
+                            <div class="dropdown">
+                                <a class="dropdown-item dropdown-toggle arrow-none" href="#" id="topnav-email"
+                                   role="button" data-toggle="dropdown" aria-haspopup="true"
+                                   aria-expanded="false">
+                                    Employees
+                                    <div class="arrow-down"></div>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="topnav-email">
+                                    <a href="{% url 'application:employees' %}" class="dropdown-item">View All</a>
+                                    <a href="{% url 'application:add_employee' %}" class="dropdown-item">Add New</a>
+                                </div>
+                            </div>
+
+{#                             Review#}
+                            <div class="dropdown">
+                                <a class="dropdown-item dropdown-toggle arrow-none" href="#" id="topnav-email"
+                                   role="button" data-toggle="dropdown" aria-haspopup="true"
+                                   aria-expanded="false">
+                                    Reviews
+                                    <div class="arrow-down"></div>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="topnav-email">
+                                    <a href="{% url 'application:reviews' %}" class="dropdown-item">View All</a>
+                                    <a href="{% url 'application:add_review' %}" class="dropdown-item">Add New</a>
+                                </div>
+                            </div>
+
+                            {# TASKS #}
+{#                            <div class="dropdown">#}
+{#                                <a class="dropdown-item dropdown-toggle arrow-none" href="#" id="topnav-email"#}
+{#                                   role="button" data-toggle="dropdown" aria-haspopup="true"#}
+{#                                   aria-expanded="false">#}
+{#                                    Daily Progress#}
+{#                                    <div class="arrow-down"></div>#}
+{#                                </a>#}
+{#                                <div class="dropdown-menu" aria-labelledby="topnav-email">#}
+{#                                    <a href="{% url 'application:daily_progress_list' %}" class="dropdown-item">List Progress Reports</a>#}
+{#                                </div>#}
+{#                            </div>#}
+
+                        </div>
+                    </li>
+                    {# --------------------------------------------------------------------------------------------- #}
+
+{#                     REPORTS#}
+{#                    <li class="nav-item dropdown">#}
+{#                        <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-pages" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">#}
+{#                            <i class="bx bxs-report mr-2"></i>Reports#}
+{#                            <div class="arrow-down"></div>#}
+{#                        </a>#}
+{#                        <div class="dropdown-menu" aria-labelledby="topnav-pages">#}
+{##}
+{#                            <a href="{% url 'application:report' %}" class="dropdown-item">Daily</a>#}
+{#                        </div>#}
+{#                    </li>#}
+                    {# --------------------------------------------------------------------------------------------- #}
+
+                    {# SECURITY #}
+{#                    <li class="nav-item dropdown">#}
+{#                        <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-pages" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">#}
+{#                            <i class="bx bx-lock mr-2"></i>Setting and Security#}
+{#                            <div class="arrow-down"></div>#}
+{#                        </a>#}
+{#                        <div class="dropdown-menu" aria-labelledby="topnav-pages">#}
+{##}
+{#                            <a href="/admin/" class="dropdown-item">Visit Developers Panel</a>#}
+{#                            <a href="/admin/auth/user/" class="dropdown-item">User Configuration</a>#}
+{#                            <a href="/admin/auth/group/" class="dropdown-item">Permissions and Groups</a>#}
+{#                        </div>#}
+{#                    </li>#}
+                    {# --------------------------------------------------------------------------------------------- #}
+
+                    {# APPS #}
+{#                    <li class="nav-item dropdown">#}
+{#                        <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-pages" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">#}
+{#                            <i class="bx bx-flag mr-2"></i>Apps#}
+{#                            <div class="arrow-down"></div>#}
+{#                        </a>#}
+{#                        <div class="dropdown-menu" aria-labelledby="topnav-pages">#}
+{##}
+{#                            <a href="#" class="dropdown-item text-danger">Website Builder</a>#}
+{#                        </div>#}
+{#                    </li>#}
+                    {# --------------------------------------------------------------------------------------------- #}
+
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>

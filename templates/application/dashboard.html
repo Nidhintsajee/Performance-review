@@ -1,0 +1,158 @@
+{% extends 'application/base.html' %}
+{% load static %}
+
+{% block seller_base_title %}
+    Dashboard
+{% endblock %}
+
+{% block base_page_css_links %}
+    <link rel="stylesheet" href="{% static 'application/libs/owl.carousel/assets/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'application/libs/owl.carousel/assets/owl.theme.default.min.css' %}">
+{% endblock %}
+
+{% block base_content %}
+
+
+    {# FISRT LINE #}
+{#    <p class="card-title">Overall Tasks Report</p>#}
+    <div class="row">
+        <div class="col-xl-12">
+
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="card">
+
+                        <div class="card-body">
+                            <div class="text-muted text-center">
+                                <h2 class="mb-4"><i
+                                        class="fa fa-calendar-alt p-3 bg-soft-primary rounded-circle text-primary"></i>
+                                </h2>
+                                <h5 class="font-size-14 mb-1">Total Employees</h5>
+                                <h4>{{ total_employees }}</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="text-muted text-center">
+                                <h2 class="mb-4"><i
+                                        class="fa fa-calendar-check p-3 bg-soft-success rounded-circle text-success"></i>
+                                </h2>
+                                <h5 class="font-size-14 mb-1">Total Reviews</h5>
+                                <h4>{{ total_reviews }}</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+{#                <div class="col-sm-3">#}
+{#                    <div class="card">#}
+{#                        <div class="card-body">#}
+{#                            <div class="text-muted text-center">#}
+{#                                <h2 class="mb-4"><i#}
+{#                                        class="fa fa-calendar-times p-3 bg-soft-danger rounded-circle text-danger"></i>#}
+{#                                </h2>#}
+{#                                <h5 class="font-size-14 mb-1">Cancelled Tasks</h5>#}
+{#                                <h4>{{ cancelled_tasks }}</h4>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{##}
+{#                <div class="col-sm-3">#}
+{#                    <div class="card">#}
+{#                        <div class="card-body">#}
+{#                            <div class="text-muted text-center">#}
+{#                                <h2 class="mb-4"><i#}
+{#                                        class="fa fa-list p-3 bg-soft-warning rounded-circle text-warning"></i></h2>#}
+{#                                <h5 class="font-size-14 mb-1">Running Tasks</h5>#}
+{#                                <h4>{{ running_tasks }}</h4>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+
+
+            </div>
+            <!-- end row -->
+        </div>
+    </div>
+    <br>
+
+
+
+{#    <p class="card-title"><i class="bx bx-calendar"></i>Today's Progress Report {% now "DATE_FORMAT" %} </p>#}
+{#    <div class="row">#}
+{#        <div class="col-12">#}
+{#            <div class="card">#}
+{#                <div class="card-body">#}
+{#                    {% if report %}#}
+{#                        {% if today_report %}#}
+{#                            {% for r in today_report %}#}
+{#                                <div class="">#}
+{#                                    <p class="card-title">{{ r.employee_name }}</p>#}
+{#                                    <div class="progress mb-4" style="height: 100px;">#}
+{#                                        <div class="progress-bar bg-{{ r.color }} progress-bar-striped progress-bar-animated py-4 text-right"#}
+{#                                             role="progressbar" style="width: {{ r.percent }}%;"#}
+{#                                             aria-valuenow="{{ r.percent }}"#}
+{#                                             aria-valuemin="0" aria-valuemax="100">#}
+{#                                            <p class="h1 p-2 text-white-50">{{ r.percent }}%#}
+{#                                                {% if r.employee_gender == 'm' %}#}
+{#                                                    <img src="{% static 'application/boy_3_gif.gif' %}" height="90px">#}
+{#                                                {% else %}#}
+{#                                                    <img src="{% static 'application/girl_1_gif.gif' %}" height="90px">#}
+{#                                                {% endif %}#}
+{#                                            </p>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{##}
+{#                                </div>#}
+{#                            {% endfor %}#}
+{#                        {% else %}#}
+{#                            <p class="card-text text-danger text-center">Today's report has been added but you haven't#}
+{#                                assigned any members yet add your employees to track their performance#}
+{#                            </p>#}
+{#                            <div class="text-center">#}
+{#                                <a href="{% url 'application:daily_progress_update' report.pk %}"#}
+{#                                   class="btn btn-light">#}
+{#                                    <i class="fa fa-user-friends"></i> Assign Employees#}
+{#                                </a>#}
+{#                                <a href="{% url 'application:daily_progress_list' %}"#}
+{#                                   class="btn btn-light">#}
+{#                                    <i class="fa fa-calendar"></i> Reports#}
+{#                                </a>#}
+{#                            </div>#}
+{#                        {% endif %}#}
+{#                    {% else %}#}
+{#                        <p class="card-text text-danger text-center">Today's report is missing#}
+{#                            Please add report in reports panel to view today's employee performance#}
+{##}
+{#                        </p>#}
+{#                        <div class="text-center">#}
+{#                            <a href="{% url 'application:create_daily_report' %}"#}
+{#                               class="btn btn-light">#}
+{#                                <i class="fa fa-calendar-plus"></i> Add Report#}
+{#                            </a>#}
+{#                            <a href="{% url 'application:daily_progress_list' %}"#}
+{#                               class="btn btn-light">#}
+{#                                <i class="fa fa-chart-line"></i> Reports#}
+{#                            </a>#}
+{#                        </div>#}
+{#                    {% endif %}#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+
+
+{% endblock %}
+
+{% block base_page_javascript_links %}
+
+    <script src="{% static 'application/libs/owl.carousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'application/js/pages/ico-landing.init.js' %}"></script>
+{% endblock %}
+

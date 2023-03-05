@@ -1,0 +1,62 @@
+{% extends 'application/base.html' %}
+{% load static %}
+{% block base_title %}Review{% endblock %}
+
+{% block base_content %}
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card bg-primary">
+                <div class="card-body py-5">
+                    <div class="text-white-50 text-center">
+                        <h1 class="text-white font-weight-semibold mb-3 hero-title"><i class="bx bx-calendar"></i></h1>
+                        <p class="m-0"><b>{{ task.start_time }}</b> - <b>{{ task.end_time }}</b></p>
+                        <h1 class="text-white font-weight-semibold mb-3 hero-title">{{ task.name }}</h1>
+                        <p class="m-0">{{ task.description }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end row -->
+    <!-- end container -->
+
+    {% if task.detailed_description %}
+
+        <div class="row">
+            <div class="col-sm-10">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="p-4">
+                            {{ task.detailed_description | safe }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="card">
+                    <div class="card-body">
+                        <div>
+                            <p class="card-title">Participants</p>
+                        </div>
+
+                        <div>
+                            <a class="card-text" href="#">Mark I</a><br>
+                            <a class="card-text" href="#">Joseph</a><br>
+                            <a class="card-text" href="#">Stephen</a><br>
+                            <a class="card-text" href="#">Jane</a><br>
+                            <a class="card-text" href="#">Ali</a><br>
+                            <a class="card-text" href="#">Marcus</a><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    {% endif %}
+
+{% endblock %}
+
+{% block base_page_javascript_code %}
+
+{% endblock %}

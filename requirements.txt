@@ -1,0 +1,8 @@
+decouple
+django-ckeditor
+django
+django-crispy-forms
+crispy-bootstrap5
+pillow
+mysqlclient
+#sudo apt-get install libmysqlclient-dev
